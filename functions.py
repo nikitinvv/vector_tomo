@@ -240,7 +240,7 @@ def R(obj, theta, rotation_axis):
 
     # STEP4: Shift based on the rotation axis
     t = cp.fft.fftfreq(n).astype('float32')
-    w = cp.exp(-2*cp.pi*1j*t*(rotation_axis + n/2))
+    w = cp.exp(2*cp.pi*1j*t*(-rotation_axis + n/2))
     sino = cp.fft.ifft(w*cp.fft.fft(sino))
     # normalization for the unity test
     c = 4*n*cp.sqrt(n*ntheta)
