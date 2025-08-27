@@ -302,7 +302,7 @@ def mshow_complex(a, show=True, **args):
     if show:
         if isinstance(a, cp.ndarray):
             a = a.get()
-        fig, axs = plt.subplots(1, 2, figsize=(10,4))
+        fig, axs = plt.subplots(1, 2, figsize=(5,2))
         im = axs[0].imshow(a.real, cmap="gray", **args)
         fig.colorbar(im, fraction=0.046, pad=0.04)
         im = axs[1].imshow(a.imag, cmap="gray", **args)
@@ -314,7 +314,7 @@ def mshow(a, show=True, **args):
     if show:
         if isinstance(a, cp.ndarray):
             a = a.get()
-        fig, axs = plt.subplots(1, 1, figsize=(4,4))
+        fig, axs = plt.subplots(1, 1, figsize=(5,5))
         im = axs.imshow(a, cmap="gray", **args)
         fig.colorbar(im, fraction=0.046, pad=0.04)
         plt.show()

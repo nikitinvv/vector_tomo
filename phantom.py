@@ -170,7 +170,7 @@ def create_vector_field_phantom_3d(shape, centers, radii, domain_vectors=None, d
         raise ValueError("Must specify either domain_vectors or domain_angles")
     
     # Create coordinate grids
-    x, y, z = np.indices(shape)
+    z, y, x = np.indices(shape)
     
     # Use centers directly in image coordinates
     centers_img = np.array(centers)
